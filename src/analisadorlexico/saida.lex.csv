@@ -1,0 +1,20 @@
+Numero Coluna,Token, Tipo
+0,if,Reservada
+1,typeof,Reservada
+2,throw,Reservada
+3,new,Reservada
+4,with,Reservada
+5,return,Reservada
+6,else,Reservada
+7,var,Reservada
+8,function,Reservada
+9,for,Reservada
+10,in,Reservada
+11,this,Reservada
+12,try,Reservada
+13,catch,Reservada
+14,while,Reservada
+15,finally,Reservada
+16,delete,Reservada
+17,do,Reservada
+18,instanceof,Reservada
