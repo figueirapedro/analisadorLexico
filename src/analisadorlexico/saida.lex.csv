@@ -1,20 +1,1278 @@
 Numero Coluna,Token, Tipo
-0,if,Reservada
-1,typeof,Reservada
-2,throw,Reservada
-3,new,Reservada
-4,with,Reservada
-5,return,Reservada
-6,else,Reservada
-7,var,Reservada
-8,function,Reservada
-9,for,Reservada
-10,in,Reservada
-11,this,Reservada
-12,try,Reservada
-13,catch,Reservada
-14,while,Reservada
-15,finally,Reservada
-16,delete,Reservada
-17,do,Reservada
-18,instanceof,Reservada
+0,global,Parametro funcao
+1,factory,Parametro funcao
+2,"use strict";,String
+3,if,Reservada
+4,typeof,Reservada
+5,===,Operador
+6,"object",String
+7,&&,Operador
+8,true,Boleano
+9,w,Parametro funcao
+10,!w.document,Parametro funcao
+11,throw,Reservada
+12,new,Reservada
+13,"jQuery,String
+14,with,Reservada
+15,return,Reservada
+16,else,Reservada
+17,!==,Operador
+18,"undefined",String
+19,this,Reservada
+20,window,Parametro funcao
+21,noGlobal,Parametro funcao
+22,"use strict";,String
+23,var,Reservada
+24,arr,Variavel
+25,getProto,Variavel
+26,slice,Variavel
+27,flat,Variavel
+28,array,Parametro funcao
+29,[],Parametro funcao
+30,push,Variavel
+31,indexOf,Variavel
+32,class2type,Variavel
+33,toString,Variavel
+34,hasOwn,Variavel
+35,fnToString,Variavel
+36,ObjectFunctionString,Variavel
+37,support,Variavel
+38,isFunction,Variavel
+39,function,Reservada
+40,obj,Parametro funcao
+41,"function",String
+42,"number",String
+43,"function";,String
+44,isWindow,Variavel
+45,null,Literal Nulo
+46,document,Variavel
+47,preservedScriptAttributes,Variavel
+48,code,Parametro funcao
+49,node,Parametro funcao
+50,doc,Parametro funcao
+51,||,Operador
+52,val,Parametro funcao
+53,"script",String
+54,for,Reservada
+55,in,Reservada
+56,i,Parametro funcao
+57,==,Operador
+58,"";,String
+59,version,Variavel
+60,"3.6.0",String
+61,selector,Parametro funcao
+62,context,Parametro funcao
+63,0,Numero
+64,num,Parametro funcao
+65,<,Operador
+66,elems,Parametro funcao
+67,ret,Variavel
+68,this.constructor(),Parametro funcao
+69,callback,Parametro funcao
+70,elem,Parametro funcao
+71,arguments,Parametro funcao
+72,-1,Numero
+73,_elem,Parametro funcao
+74,1,Numero
+75,len,Variavel
+76,>=,Operador
+77,name,Parametro funcao
+78,src,Parametro funcao
+79,copy,Parametro funcao
+80,copyIsArray,Parametro funcao
+81,clone,Parametro funcao
+82,"boolean",String
+83,target,Parametro funcao
+84,"__proto__",String
+85,deep,Parametro funcao
+86,"jQuery",String
+87,/\D/g,Parametro funcao
+88,"",String
+89,msg,Parametro funcao
+90,"[object Object]",String
+91,!proto,Parametro funcao
+92,proto,Parametro funcao
+93,"constructor",String
+94,Ctor,Parametro funcao
+95,options,Parametro funcao
+96,false,Boleano
+97,results,Parametro funcao
+98,"string",String
+99,first,Parametro funcao
+100,second,Parametro funcao
+101,invert,Parametro funcao
+102,arg,Parametro funcao
+103,value,Parametro funcao
+104,"Boolean,String
+105," ",String
+106,",String
+107,_i,Parametro funcao
+108,"[object ",String
+109,"]",String
+110,length,Variavel
+111,"length",String
+112,"array",String
+113,>,Operador
+114,Sizzle,Variavel
+115,Expr,Parametro funcao
+116,getText,Parametro funcao
+117,isXML,Parametro funcao
+118,tokenize,Parametro funcao
+119,compile,Parametro funcao
+120,select,Parametro funcao
+121,outermostContext,Parametro funcao
+122,sortInput,Parametro funcao
+123,hasDuplicate,Parametro funcao
+124,setDocument,Parametro funcao
+125,docElem,Parametro funcao
+126,documentIsHTML,Parametro funcao
+127,rbuggyQSA,Parametro funcao
+128,rbuggyMatches,Parametro funcao
+129,matches,Parametro funcao
+130,contains,Parametro funcao
+131,"sizzle",String
+132,a,Parametro funcao
+133,b,Parametro funcao
+134,list,Parametro funcao
+135,"checked|selected|async|autofocus|autoplay|controls|defer|disabled|hidden|",String
+136,"ismap|loop|multiple|open|readonly|required|scoped",String
+137,"[\\x20\\t\\r\\n\\f]",String
+138,"(?:\\\\[\\da-fA-F]{1  6}",String
+139,"?|\\\\[^\\r\\n\\f]|[\\w-]|[^\0-\\x7f])+",String
+140,"\\[",String
+141,"*(",String
+142,")(?:",String
+143,"*([*^$|!~]?=)",String
+144,"*(?:'((?:\\\\.|[^\\\\'])*)'|\"((?:\\\\.|[^\\\\\"])*)\"|(",String
+145,"))|)",String
+146,"*\\]",String
+147,":(",String
+148,")(?:\\((",String
+149,"('((?:\\\\.|[^\\\\'])*)'|\"((?:\\\\.|[^\\\\\"])*)\")|",String
+150,"((?:\\\\.|[^\\\\()[\\]]|",String
+151,")*)|",String
+152,".*",String
+153,")\\)|)",String
+154,"+",String
+155,"g",String
+156,"^",String
+157,"+|((?:^|[^\\\\])(?:\\\\.)*)",String
+158,"+$",String
+159,"*  ",String
+160,"*",String
+161,"*([>+~]|",String
+162,")",String
+163,"|>",String
+164,pseudos,Parametro funcao
+165,"$",String
+166,"ID":,String
+167,"^#(",String
+168,"CLASS":,String
+169,"^\\.(",String
+170,"TAG":,String
+171,"^(",String
+172,"|[*])",String
+173,"ATTR":,String
+174,"PSEUDO":,String
+175,"CHILD":,String
+176,"^:(only|first|last|nth|nth-last)-(child|of-type)(?:\\(",String
+177,"*(even|odd|(([+-]|)(\\d*)n|)",String
+178,"*(?:([+-]|)",String
+179,"*(\\d+)|))",String
+180,"*\\)|)",String
+181,"i",String
+182,"bool":,String
+183,"^(?:",String
+184,")$",String
+185,"needsContext":,String
+186,"*[>+~]|:(even|odd|eq|gt|lt|nth|first|last)(?:\\(",String
+187,"*((?:-\\d)?\\d*)",String
+188,"*\\)|)(?=[^-]|$)",String
+189,"\\\\[\\da-fA-F]{1  6}",String
+190,"?|\\\\([^\\r\\n\\f])",String
+191,escape,Parametro funcao
+192,nonHex,Parametro funcao
+193,high,Variavel
+194,"0x",String
+195,10,Numero
+196,ch,Parametro funcao
+197,asCodePoint,Parametro funcao
+198,"\0",String
+199,"\uFFFD";,String
+200,"\\",String
+201,16,Numero
+202,";,String
+203,"fieldset";,String
+204,"parentNode",String
+205,"legend",String
+206,try,Reservada
+207,preferredDoc.childNodes,Parametro funcao
+208,catch,Reservada
+209,e,Parametro funcao
+210,els,Parametro funcao
+211,j,Variavel
+212,while,Reservada
+213,seed,Parametro funcao
+214,nid,Parametro funcao
+215,match,Parametro funcao
+216,groups,Parametro funcao
+217,newSelector,Parametro funcao
+218,9,Numero
+219,11,Numero
+220,!seed,Parametro funcao
+221,m,Parametro funcao
+222,2,Numero
+223,3,Numero
+224,context.parentNode,Parametro funcao
+225,"id",String
+226,rcssescape,Parametro funcao
+227,i--,Parametro funcao
+228,"#",String
+229,":scope",String
+230,qsaError,Parametro funcao
+231,finally,Reservada
+232,rtrim,Parametro funcao
+233,"$1",String
+234,keys,Variavel
+235,key,Parametro funcao
+236,delete,Reservada
+237,fn,Parametro funcao
+238,el,Variavel
+239,"fieldset",String
+240,el.parentNode,Parametro funcao
+241,attrs,Parametro funcao
+242,handler,Parametro funcao
+243,"|",String
+244,cur,Variavel
+245,diff,Parametro funcao
+246,type,Parametro funcao
+247,"input",String
+248,"button",String
+249,disabled,Parametro funcao
+250,"form",String
+251,"label",String
+252,argument,Parametro funcao
+253,seed.length,Parametro funcao
+254,namespace,Variavel
+255,"HTML",String
+256,subWindow,Parametro funcao
+257,subWindow.addEventListener,Parametro funcao
+258,"unload",String
+259,unloadHandler,Parametro funcao
+260,subWindow.attachEvent,Parametro funcao
+261,"onunload",String
+262,"div",String
+263,":scope,String
+264,"i";,String
+265,"className",String
+266,support.getById,Parametro funcao
+267,"ID",String
+268,id,Parametro funcao
+269,attrId,Variavel
+270,runescape,Parametro funcao
+271,"TAG",String
+272,tag,Parametro funcao
+273,support.qsa,Parametro funcao
+274,"CLASS",String
+275,className,Parametro funcao
+276,document.querySelectorAll,Parametro funcao
+277,"<a id='",String
+278,"'></a>",String
+279,"<select id='",String
+280,"-\r\\' msallowcapture=''>",String
+281,"<option selected=''></option></select>";,String
+282,"[msallowcapture^='']",String
+283,"[*^$]=",String
+284,"*(?:''|\"\")",String
+285,"[selected]",String
+286,"*(?:value|",String
+287,"[id~=",String
+288,"-]",String
+289,"~=",String
+290,"name",String
+291,"[name='']",String
+292,"*name",String
+293,"*=",String
+294,":checked",String
+295,"a#",String
+296,"+*",String
+297,".#.+[+~]",String
+298,"\\\f",String
+299,"[\\r\\n\\f]",String
+300,"<a,String
+301,"<select disabled='disabled'><option/></select>";,String
+302,input,Variavel
+303,"type",String
+304,"hidden",String
+305,"D",String
+306,"[name=d]",String
+307,"*[*^$|!~]?=",String
+308,":enabled",String
+309,":disabled",String
+310,"*  :x",String
+311,"[s!='']:x",String
+312,"!=",String
+313,docElem.contains,Parametro funcao
+314,adown,Variavel
+315,bup,Parametro funcao
+316,compare,Variavel
+317,preferredDoc,Parametro funcao
+318,4,Numero
+319,expr,Parametro funcao
+320,elements,Parametro funcao
+321,Expr.attrHandle,Parametro funcao
+322,name.toLowerCase(),Parametro funcao
+323,!documentIsHTML,Parametro funcao
+324,sel,Parametro funcao
+325,"Syntax,String
+326,j--,Parametro funcao
+327,!nodeType,Parametro funcao
+328,50,Numero
+329,">":,String
+330,":,String
+331,"+":,String
+332,"previousSibling",String
+333,"~":,String
+334,5,Numero
+335,"nth",String
+336,6,Numero
+337,"even",String
+338,"odd",String
+339,7,Numero
+340,8,Numero
+341,"CHILD",String
+342,unquoted,Parametro funcao
+343,nodeNameSelector,Parametro funcao
+344,nodeName,Variavel
+345,pattern,Variavel
+346,"(^|",String
+347,"(",String
+348,"|$)",String
+349,"class",String
+350,operator,Parametro funcao
+351,check,Parametro funcao
+352,result,Variavel
+353,"!=";,String
+354,!operator,Parametro funcao
+355,"=",String
+356,"^=",String
+357,"$=",String
+358,-check.length,Parametro funcao
+359,rwhitespace,Parametro funcao
+360,"|=",String
+361,"-",String
+362,what,Parametro funcao
+363,_argument,Parametro funcao
+364,last,Parametro funcao
+365,simple,Variavel
+366,-4,Numero
+367,"last",String
+368,"of-type";,String
+369,_context,Parametro funcao
+370,xml,Parametro funcao
+371,uniqueCache,Parametro funcao
+372,outerCache,Parametro funcao
+373,nodeIndex,Parametro funcao
+374,start,Parametro funcao
+375,"nextSibling",String
+376,parent,Parametro funcao
+377,dir,Parametro funcao
+378,"only",String
+379,"nextSibling";,String
+380,useCache,Parametro funcao
+381,pseudo,Parametro funcao
+382,"unsupported,String
+383,pseudo.toLowerCase(),Parametro funcao
+384,"not":,String
+385,"has":,String
+386,"contains":,String
+387,text,Parametro funcao
+388,"lang":,String
+389,lang,Parametro funcao
+390,do,Reservada
+391,"xml:lang",String
+392,"lang",String
+393,"target":,String
+394,hash,Variavel
+395,"root":,String
+396,"focus":,String
+397,"enabled":,String
+398,"disabled":,String
+399,"checked":,String
+400,"option",String
+401,"selected":,String
+402,elem.parentNode,Parametro funcao
+403,"empty":,String
+404,"parent":,String
+405,"empty",String
+406,"header":,String
+407,"input":,String
+408,"button":,String
+409,"button";,String
+410,"text":,String
+411,"text",String
+412,"first":,String
+413,"last":,String
+414,_matchIndexes,Parametro funcao
+415,"eq":,String
+416,"even":,String
+417,matchIndexes,Parametro funcao
+418,"odd":,String
+419,"lt":,String
+420,"gt":,String
+421,"eq",String
+422,parseOnly,Parametro funcao
+423,tokens,Parametro funcao
+424,soFar,Parametro funcao
+425,preFilters,Parametro funcao
+426,cached,Parametro funcao
+427,!matched,Parametro funcao
+428,matcher,Parametro funcao
+429,combinator,Parametro funcao
+430,base,Parametro funcao
+431,matchers,Parametro funcao
+432,contexts,Parametro funcao
+433,unmatched,Parametro funcao
+434,map,Parametro funcao
+435,filter,Parametro funcao
+436,mapped,Parametro funcao
+437,preFilter,Parametro funcao
+438,postFilter,Parametro funcao
+439,postFinder,Parametro funcao
+440,postSelector,Parametro funcao
+441,preMap,Parametro funcao
+442,matcherIn,Parametro funcao
+443,matcherOut,Parametro funcao
+444,temp,Parametro funcao
+445,preexisting,Parametro funcao
+446,matcherOut.length,Parametro funcao
+447,implicitRelative,Parametro funcao
+448,checkContext,Parametro funcao
+449,elementMatchers,Parametro funcao
+450,setMatchers,Parametro funcao
+451,bySet,Variavel
+452,outermost,Parametro funcao
+453,"0",String
+454,0.1,Numero
+455,setMatched,Parametro funcao
+456,superMatcher,Parametro funcao
+457,!cached,Parametro funcao
+458,!match,Parametro funcao
+459,token,Parametro funcao
+460,find,Parametro funcao
+461,funescape,Parametro funcao
+462,!context,Parametro funcao
+463,compiled,Parametro funcao
+464,"needsContext",String
+465,!selector,Parametro funcao
+466,"href",String
+467,"#";,String
+468,"type|href|height|width",String
+469,!isXML,Parametro funcao
+470,"<input/>";,String
+471,"value",String
+472,_name,Parametro funcao
+473,"disabled",String
+474,booleans,Parametro funcao
+475,":",String
+476,until,Parametro funcao
+477,matched,Variavel
+478,siblings,Variavel
+479,n,Parametro funcao
+480,rneedsContext,Variavel
+481,rsingleTag,Variavel
+482,qualifier,Parametro funcao
+483,not,Parametro funcao
+484,qualifier.nodeType,Parametro funcao
+485,":not(",String
+486,")";,String
+487,root,Parametro funcao
+488,"<",String
+489,">",String
+490,instanceof,Reservada
+491,selector.nodeType,Parametro funcao
+492,rparentsprev,Variavel
+493,targets,Variavel
+494,selectors,Parametro funcao
+495,!elem,Parametro funcao
+496,this.get(),Parametro funcao
+497,elem.contentDocument,Parametro funcao
+498,"template",String
+499,-5,Numero
+500,"Until",String
+501,rnothtmlwhite,Variavel
+502,object,Variavel
+503,_,Parametro funcao
+504,flag,Parametro funcao
+505,{},Parametro funcao
+506,memory,Parametro funcao
+507,fired,Parametro funcao
+508,locked,Parametro funcao
+509,!options.memory,Parametro funcao
+510,args,Parametro funcao
+511,index,Parametro funcao
+512,<=,Operador
+513,!locked,Parametro funcao
+514,!firing,Parametro funcao
+515,v,Parametro funcao
+516,ex,Parametro funcao
+517,resolve,Parametro funcao
+518,reject,Parametro funcao
+519,noValue,Parametro funcao
+520,undefined,Parametro funcao
+521,func,Parametro funcao
+522,tuples,Variavel
+523,"notify",String
+524,"progress",String
+525,"memory",String
+526,"resolve",String
+527,"done",String
+528,"once memory",String
+529,"once memory",String
+530,"resolved",String
+531,"reject",String
+532,"fail",String
+533,"once memory",String
+534,"once memory",String
+535,"rejected",String
+536,"pending",String
+537,"catch":,String
+538,fns,Variavel
+539,newDefer,Parametro funcao
+540,tuple,Parametro funcao
+541,returned,Variavel
+542,returned.promise,Parametro funcao
+543,newDefer.notify,Parametro funcao
+544,newDefer.resolve,Parametro funcao
+545,"With",String
+546,onFulfilled,Parametro funcao
+547,onRejected,Parametro funcao
+548,onProgress,Parametro funcao
+549,maxDepth,Variavel
+550,depth,Parametro funcao
+551,deferred,Parametro funcao
+552,special,Parametro funcao
+553,that,Variavel
+554,"Thenable self-resolution",String
+555,then,Parametro funcao
+556,Identity,Parametro funcao
+557,Thrower,Parametro funcao
+558,deferred.notifyWith,Parametro funcao
+559,jQuery.Deferred.exceptionHook,Parametro funcao
+560,jQuery.Deferred.getStackHook,Parametro funcao
+561,newDefer.notifyWith,Parametro funcao
+562,promise,Parametro funcao
+563,stateString,Parametro funcao
+564,singleValue,Parametro funcao
+565,remaining,Variavel
+566,--remaining,Parametro funcao
+567,resolveContexts,Parametro funcao
+568,primary.reject,Parametro funcao
+569,rerrorNames,Variavel
+570,error,Parametro funcao
+571,stack,Parametro funcao
+572,error.name,Parametro funcao
+573,"jQuery.Deferred,String
+574,error.stack,Parametro funcao
+575,readyList,Variavel
+576,wait,Parametro funcao
+577,"DOMContentLoaded",String
+578,"load",String
+579,"complete",String
+580,"loading",String
+581,access,Variavel
+582,chainable,Parametro funcao
+583,emptyGet,Parametro funcao
+584,raw,Parametro funcao
+585,bulk,Parametro funcao
+586,_key,Parametro funcao
+587,rmsPrefix,Variavel
+588,_all,Parametro funcao
+589,letter,Parametro funcao
+590,string,Parametro funcao
+591,"ms-",String
+592,rdashAlpha,Parametro funcao
+593,acceptData,Variavel
+594,owner,Parametro funcao
+595,!value,Parametro funcao
+596,owner.nodeType,Parametro funcao
+597,this.expando,Parametro funcao
+598,data,Parametro funcao
+599,prop,Parametro funcao
+600,cache,Parametro funcao
+601,dataPriv,Variavel
+602,dataUser,Variavel
+603,rbrace,Variavel
+604,"true",String
+605,"false",String
+606,"null",String
+607,"data-",String
+608,rmultiDash,Parametro funcao
+609,"-$&",String
+610,this.length,Parametro funcao
+611,"hasDataAttrs",String
+612,"fx",String
+613,"queue";,String
+614,"fx";,String
+615,queue,Variavel
+616,"inprogress",String
+617,next,Parametro funcao
+618,"queueHooks";,String
+619,"once memory",String
+620,"queue",String
+621,setter,Variavel
+622,--count,Parametro funcao
+623,"queueHooks",String
+624,pnum,Variavel
+625,rcssNum,Variavel
+626,"^(?:([+-])=|)(",String
+627,")([a-z%]*)$",String
+628,cssExpand,Variavel
+629,"Top",String
+630,"Right",String
+631,"Bottom",String
+632,"Left",String
+633,documentElement,Variavel
+634,isAttached,Variavel
+635,elem.ownerDocument,Parametro funcao
+636,documentElement.getRootNode,Parametro funcao
+637,composed,Parametro funcao
+638,isHiddenWithinTree,Variavel
+639,"none",String
+640,"display",String
+641,"none";,String
+642,valueParts,Parametro funcao
+643,tween,Parametro funcao
+644,scale,Parametro funcao
+645,20,Numero
+646,"px",String
+647,maxIterations--,Parametro funcao
+648,0.5,Numero
+649,defaultDisplayMap,Variavel
+650,display,Parametro funcao
+651,"block";,String
+652,show,Parametro funcao
+653,!elem.style,Parametro funcao
+654,state,Parametro funcao
+655,rcheckableType,Variavel
+656,rtagName,Variavel
+657,rscriptType,Variavel
+658,fragment,Variavel
+659,"radio",String
+660,"checked",String
+661,"t",String
+662,"<textarea>x</textarea>";,String
+663,"<option></option>";,String
+664,wrapMap,Variavel
+665,"<table>",String
+666,"</table>",String
+667,"<table><colgroup>",String
+668,"</colgroup></table>",String
+669,"<table><tbody>",String
+670,"</tbody></table>",String
+671,"<table><tbody><tr>",String
+672,"</tr></tbody></table>",String
+673,!support.option,Parametro funcao
+674,"<select multiple='multiple'>",String
+675,"</select>",String
+676,refElements,Parametro funcao
+677,"globalEval",String
+678,rhtml,Variavel
+679,scripts,Parametro funcao
+680,selection,Parametro funcao
+681,ignored,Parametro funcao
+682,tmp,Parametro funcao
+683,wrap,Parametro funcao
+684,attached,Parametro funcao
+685,nodes,Parametro funcao
+686,rtypenamespace,Variavel
+687,"focus",String
+688,err,Parametro funcao
+689,types,Parametro funcao
+690,one,Parametro funcao
+691,!fn,Parametro funcao
+692,event,Parametro funcao
+693,eventHandle,Parametro funcao
+694,events,Parametro funcao
+695,t,Parametro funcao
+696,handleObj,Parametro funcao
+697,handlers,Parametro funcao
+698,namespaces,Parametro funcao
+699,origType,Parametro funcao
+700,handler.handler,Parametro funcao
+701,!handler.guid,Parametro funcao
+702,t--,Parametro funcao
+703,".",String
+704,!type,Parametro funcao
+705,elem.addEventListener,Parametro funcao
+706,special.add,Parametro funcao
+707,!handleObj.handler.guid,Parametro funcao
+708,handlers.delegateCount++,Parametro funcao
+709,mappedTypes,Parametro funcao
+710,origCount,Parametro funcao
+711,"(^|\\.)",String
+712,"\\.(?:.*\\.|)",String
+713,"(\\.|$)",String
+714,handleObj.namespace,Parametro funcao
+715,"**",String
+716,handleObj.selector,Parametro funcao
+717,special.remove,Parametro funcao
+718,elemData.handle,Parametro funcao
+719,"handle events",String
+720,nativeEvent,Parametro funcao
+721,handlerQueue,Parametro funcao
+722,arguments.length,Parametro funcao
+723,"events",String
+724,matched.elem,Parametro funcao
+725,special.postDispatch,Parametro funcao
+726,matchedHandlers,Parametro funcao
+727,matchedSelectors,Parametro funcao
+728,"click",String
+729,matchedHandlers.length,Parametro funcao
+730,delegateCount,Parametro funcao
+731,hook,Parametro funcao
+732,jQuery.Event.prototype,Parametro funcao
+733,this.originalEvent,Parametro funcao
+734,originalEvent,Parametro funcao
+735,el.type,Parametro funcao
+736,target.type,Parametro funcao
+737,"a",String
+738,expectSync,Parametro funcao
+739,!expectSync,Parametro funcao
+740,!saved.length,Parametro funcao
+741,saved.length,Parametro funcao
+742,handle,Parametro funcao
+743,elem.removeEventListener,Parametro funcao
+744,props,Parametro funcao
+745,"char":,String
+746,"focusin",String
+747,"focusout",String
+748,delegateType,Parametro funcao
+749,"mouseover",String
+750,"mouseout",String
+751,"pointerover",String
+752,"pointerout",String
+753,orig,Parametro funcao
+754,fix,Parametro funcao
+755,related,Parametro funcao
+756,rnoInnerhtml,Variavel
+757,content,Parametro funcao
+758,"table",String
+759,"tr",String
+760,"tbody",String
+761,"/",String
+762,"true/",String
+763,dest,Parametro funcao
+764,l,Parametro funcao
+765,pdataOld,Parametro funcao
+766,udataOld,Parametro funcao
+767,udataCur,Parametro funcao
+768,"handle events",String
+769,src.type,Parametro funcao
+770,"textarea",String
+771,collection,Parametro funcao
+772,hasScripts,Parametro funcao
+773,self,Variavel
+774,valueIsFunction,Parametro funcao
+775,"module",String
+776,node.src,Parametro funcao
+777,"nonce",String
+778,rcleanScript,Parametro funcao
+779,keepData,Parametro funcao
+780,node.parentNode,Parametro funcao
+781,html,Parametro funcao
+782,dataAndEvents,Parametro funcao
+783,deepDataAndEvents,Parametro funcao
+784,srcElements,Parametro funcao
+785,destElements,Parametro funcao
+786,data.events,Parametro funcao
+787,this.parentNode,Parametro funcao
+788,"append",String
+789,"prepend",String
+790,"before",String
+791,"after",String
+792,"replaceWith",String
+793,original,Parametro funcao
+794,rnumnonpx,Variavel
+795,")(?!px)[a-z%]+$",String
+796,getStyles,Variavel
+797,view,Variavel
+798,swap,Variavel
+799,rboxStyle,Variavel
+800,!div,Parametro funcao
+801,"position:absolute;left:-11111px;width:60px;",String
+802,"margin-top:1px;padding:0;border:0";,String
+803,"position:relative;display:block;box-sizing:border-box;overflow:scroll;",String
+804,"margin:auto;border:1px;padding:1px;",String
+805,"width:60%;top:1%";,String
+806,divStyle,Variavel
+807,"1%";,String
+808,divStyle.marginLeft,Parametro funcao
+809,"60%";,String
+810,divStyle.right,Parametro funcao
+811,divStyle.width,Parametro funcao
+812,"absolute";,String
+813,measure,Parametro funcao
+814,boxSizingReliableVal,Parametro funcao
+815,scrollboxSizeVal,Parametro funcao
+816,pixelBoxStylesVal,Parametro funcao
+817,reliableTrDimensionsVal,Parametro funcao
+818,reliableMarginLeftVal,Parametro funcao
+819,!div.style,Parametro funcao
+820,"content-box";,String
+821,tr,Parametro funcao
+822,trChild,Parametro funcao
+823,"position:absolute;left:-11111px;border-collapse:separate";,String
+824,"border:1px solid";,String
+825,"1px";,String
+826,"9px";,String
+827,table,Parametro funcao
+828,trStyle.height,Parametro funcao
+829,trStyle.borderTopWidth,Parametro funcao
+830,trStyle.borderBottomWidth,Parametro funcao
+831,computed,Parametro funcao
+832,minWidth,Parametro funcao
+833,maxWidth,Parametro funcao
+834,conditionFn,Parametro funcao
+835,hookFn,Parametro funcao
+836,conditionFn(),Parametro funcao
+837,cssPrefixes,Variavel
+838,"Webkit",String
+839,"Moz",String
+840,"ms",String
+841,capName,Variavel
+842,final,Variavel
+843,rdisplayswap,Variavel
+844,"absolute",String
+845,"block",String
+846,"400",String
+847,subtract,Parametro funcao
+848,dimension,Parametro funcao
+849,box,Parametro funcao
+850,isBorderBox,Parametro funcao
+851,styles,Parametro funcao
+852,computedVal,Parametro funcao
+853,"width",String
+854,"border",String
+855,"content",String
+856,"margin",String
+857,!isBorderBox,Parametro funcao
+858,"padding",String
+859,"Width",String
+860,"offset",String
+861,extra,Parametro funcao
+862,"boxSizing",String
+863,"border-box",String
+864,!extra,Parametro funcao
+865,"auto";,String
+866,"auto",String
+867,"inline",String
+868,"border-box";,String
+869,valueIsBorderBox,Parametro funcao
+870,"px";,String
+871,"opacity",String
+872,"1",String
+873,"animationIterationCount":,String
+874,"columnCount":,String
+875,"fillOpacity":,String
+876,"flexGrow":,String
+877,"flexShrink":,String
+878,"fontWeight":,String
+879,"gridArea":,String
+880,"gridColumn":,String
+881,"gridColumnEnd":,String
+882,"gridColumnStart":,String
+883,"gridRow":,String
+884,"gridRowEnd":,String
+885,"gridRowStart":,String
+886,"lineHeight":,String
+887,"opacity":,String
+888,"order":,String
+889,"orphans":,String
+890,"widows":,String
+891,"zIndex":,String
+892,"zoom":,String
+893,hooks,Parametro funcao
+894,!isCustomProp,Parametro funcao
+895,"number";,String
+896,"background",String
+897,"inherit";,String
+898,"set",String
+899,isCustomProp,Parametro funcao
+900,"get",String
+901,"normal",String
+902,"height",String
+903,cssShow,Parametro funcao
+904,support.reliableMarginLeft,Parametro funcao
+905,"marginLeft",String
+906,prefix,Parametro funcao
+907,suffix,Parametro funcao
+908,end,Parametro funcao
+909,easing,Parametro funcao
+910,unit,Parametro funcao
+911,percent,Parametro funcao
+912,this.options.duration,Parametro funcao
+913,this.options.step,Parametro funcao
+914,this.elem,Parametro funcao
+915,this.now,Parametro funcao
+916,tween.elem,Parametro funcao
+917,tween.prop,Parametro funcao
+918,p,Parametro funcao
+919,"swing",String
+920,inProgress,Parametro funcao
+921,schedule,Parametro funcao
+922,includeWidth,Parametro funcao
+923,animation,Parametro funcao
+924,opts,Parametro funcao
+925,toggle,Parametro funcao
+926,oldfire,Parametro funcao
+927,propTween,Parametro funcao
+928,restoreDisplay,Parametro funcao
+929,"fxshow",String
+930,!opts.queue,Parametro funcao
+931,!hooks.unqueued,Parametro funcao
+932,"toggle";,String
+933,"hide",String
+934,"show",String
+935,style.overflowX,Parametro funcao
+936,"inline-block",String
+937,"float",String
+938,!propTween,Parametro funcao
+939,"inline-block";,String
+940,opts.overflow,Parametro funcao
+941,"hidden";,String
+942,dataShow,Parametro funcao
+943,hidden,Parametro funcao
+944,!hidden,Parametro funcao
+945,specialEasing,Parametro funcao
+946,"expand",String
+947,properties,Parametro funcao
+948,stopped,Parametro funcao
+949,currentTime,Variavel
+950,!length,Parametro funcao
+951,animation.opts,Parametro funcao
+952,gotoEnd,Parametro funcao
+953,result.stop,Parametro funcao
+954,animation.elem,Parametro funcao
+955,createTween,Parametro funcao
+956,animation.opts.start,Parametro funcao
+957,animation.opts.progress,Parametro funcao
+958,animation.opts.done,Parametro funcao
+959,animation.opts.complete,Parametro funcao
+960,animation.opts.fail,Parametro funcao
+961,tick,Parametro funcao
+962,Animation,Parametro funcao
+963,"*":,String
+964,prepend,Parametro funcao
+965,speed,Parametro funcao
+966,opt,Variavel
+967,jQuery.fx.off,Parametro funcao
+968,opt.old,Parametro funcao
+969,opt.queue,Parametro funcao
+970,to,Parametro funcao
+971,empty,Variavel
+972,anim,Variavel
+973,"finish",String
+974,doAnimation,Parametro funcao
+975,optall.queue,Parametro funcao
+976,clearQueue,Parametro funcao
+977,stopQueue,Variavel
+978,stop,Variavel
+979,dequeue,Variavel
+980,"toggle",String
+981,cssFn,Variavel
+982,!timers.length,Parametro funcao
+983,timer,Parametro funcao
+984,600,Numero
+985,200,Numero
+986,400,Numero
+987,time,Parametro funcao
+988,timeout,Variavel
+989,"select",String
+990,"checkbox";,String
+991,"t";,String
+992,"radio";,String
+993,jQuery.attr,Parametro funcao
+994,/\w+/g,Parametro funcao
+995,getter,Variavel
+996,rfocusable,Variavel
+997,jQuery.prop,Parametro funcao
+998,tabindex,Variavel
+999,"tabindex",String
+1000,elem.nodeName,Parametro funcao
+1001,"for": "htmlFor",String
+1002,"htmlFor",String
+1003,"class": "className",String
+1004,!support.optSelected,Parametro funcao
+1005,parent.parentNode,Parametro funcao
+1006,"tabIndex",String
+1007,"readOnly",String
+1008,"maxLength",String
+1009,"cellSpacing",String
+1010,"cellPadding",String
+1011,"rowSpan",String
+1012,"colSpan",String
+1013,"useMap",String
+1014,"frameBorder",String
+1015,"contentEditable",String
+1016,curValue,Parametro funcao
+1017,clazz,Parametro funcao
+1018,finalValue,Parametro funcao
+1019,classes.length,Parametro funcao
+1020,!arguments.length,Parametro funcao
+1021,stateVal,Parametro funcao
+1022,isValidValue,Parametro funcao
+1023,"__className__",String
+1024,this.setAttribute,Parametro funcao
+1025,rreturn,Variavel
+1026,option,Parametro funcao
+1027,"select-one",String
+1028,option.parentNode,Parametro funcao
+1029,"optgroup",String
+1030,values,Parametro funcao
+1031,!optionSet,Parametro funcao
+1032,"checkbox",String
+1033,!support.checkOn,Parametro funcao
+1034,"on",String
+1035,"onfocusin",String
+1036,rfocusMorph,Variavel
+1037,jQuery.event,Parametro funcao
+1038,onlyHandlers,Parametro funcao
+1039,bubbleType,Parametro funcao
+1040,ontype,Parametro funcao
+1041,lastElement,Parametro funcao
+1042,"namespace",String
+1043,!event.target,Parametro funcao
+1044,"handle",String
+1045,eventPath.pop(),Parametro funcao
+1046,event.isPropagationStopped(),Parametro funcao
+1047,!support.focusin,Parametro funcao
+1048,event.target,Parametro funcao
+1049,!attaches,Parametro funcao
+1050,location,Variavel
+1051,nonce,Variavel
+1052,rquery,Variavel
+1053,"text/xml",String
+1054,"parsererror",String
+1055,"Invalid,String
+1056,parserErrorElem.childNodes,Parametro funcao
+1057,"\n",String
+1058,rbracket,Variavel
+1059,traditional,Parametro funcao
+1060,add,Parametro funcao
+1061,"[",String
+1062,valueOrFunction,Parametro funcao
+1063,this.name,Parametro funcao
+1064,"&",String
+1065,"elements",String
+1066,this.nodeName,Parametro funcao
+1067,rCRLF,Parametro funcao
+1068,"\r\n",String
+1069,r20,Variavel
+1070,"*/".concat( "*",String
+1071,structure,Parametro funcao
+1072,dataTypeExpression,Parametro funcao
+1073,"*";,String
+1074,originalOptions,Parametro funcao
+1075,jqXHR,Parametro funcao
+1076,inspected,Variavel
+1077,dataType,Parametro funcao
+1078,prefilterOrFactory,Parametro funcao
+1079,dataTypeOrTransport,Variavel
+1080,seekingTransport,Parametro funcao
+1081,s,Parametro funcao
+1082,responses,Parametro funcao
+1083,finalDataType,Parametro funcao
+1084,firstDataType,Parametro funcao
+1085,"Content-Type",String
+1086,ct,Parametro funcao
+1087,!firstDataType,Parametro funcao
+1088,response,Parametro funcao
+1089,isSuccess,Parametro funcao
+1090,current,Parametro funcao
+1091,conv,Parametro funcao
+1092,prev,Parametro funcao
+1093,"* ",String
+1094,!conv,Parametro funcao
+1095,"* ",String
+1096,"No,String
+1097,"success",String
+1098,"GET",String
+1099,location.protocol,Parametro funcao
+1100,"application/x-www-form-urlencoded; charset=UTF-8",String
+1101,"text/plain",String
+1102,"text/html",String
+1103,"application/xml,String
+1104,text/xml",Parametro funcao
+1105,"application/json,String
+1106,"responseXML",String
+1107,"responseText",String
+1108,"responseJSON",String
+1109,"* text":,String
+1110,"text html":,String
+1111,"text json":,String
+1112,"text xml":,String
+1113,settings,Parametro funcao
+1114,jQuery.ajaxSettings,Parametro funcao
+1115,prefilters,Parametro funcao
+1116,transports,Parametro funcao
+1117,url,Parametro funcao
+1118,cacheURL,Parametro funcao
+1119,responseHeadersString,Parametro funcao
+1120,responseHeaders,Parametro funcao
+1121,timeoutTimer,Parametro funcao
+1122,urlAnchor,Parametro funcao
+1123,completed,Parametro funcao
+1124,fireGlobals,Parametro funcao
+1125,uncached,Parametro funcao
+1126,callbackContext,Parametro funcao
+1127,"once memory",String
+1128,"canceled",String
+1129,!responseHeaders,Parametro funcao
+1130,statusText,Parametro funcao
+1131,finalText,Variavel
+1132,transport,Parametro funcao
+1133,rprotocol,Parametro funcao
+1134,s.data,Parametro funcao
+1135,"ajaxStart",String
+1136,rhash,Parametro funcao
+1137,!s.hasContent,Parametro funcao
+1138,"?",String
+1139,rantiCache,Parametro funcao
+1140,"_=",String
+1141,nonce.guid++,Parametro funcao
+1142,"application/x-www-form-urlencoded",String
+1143,s.ifModified,Parametro funcao
+1144,"If-Modified-Since",String
+1145,"If-None-Match",String
+1146,"Accept",String
+1147,"abort";,String
+1148,!transport,Parametro funcao
+1149,"ajaxSend",String
+1150,"timeout",String
+1151,requestHeaders,Parametro funcao
+1152,status,Parametro funcao
+1153,nativeStatusText,Parametro funcao
+1154,headers,Parametro funcao
+1155,success,Parametro funcao
+1156,modified,Parametro funcao
+1157,300,Numero
+1158,s.dataTypes,Parametro funcao
+1159,"json",String
+1160,"text script",String
+1161,"Last-Modified",String
+1162,"etag",String
+1163,204,Numero
+1164,"HEAD",String
+1165,"nocontent";,String
+1166,304,Numero
+1167,"notmodified";,String
+1168,"error";,String
+1169,"ajaxSuccess",String
+1170,"ajaxError",String
+1171,"ajaxComplete",String
+1172,--jQuery.active,Parametro funcao
+1173,"ajaxStop",String
+1174,"post",String
+1175,method,Parametro funcao
+1176,"content-type",String
+1177,"text script":,String
+1178,elem.firstElementChild,Parametro funcao
+1179,contents.length,Parametro funcao
+1180,htmlIsFunction,Variavel
+1181,"body",String
+1182,xhrSuccessStatus,Variavel
+1183,"withCredentials",String
+1184,complete,Parametro funcao
+1185,options.type,Parametro funcao
+1186,options.url,Parametro funcao
+1187,options.async,Parametro funcao
+1188,options.username,Parametro funcao
+1189,options.xhrFields,Parametro funcao
+1190,"X-Requested-With",String
+1191,"XMLHttpRequest";,String
+1192,"abort",String
+1193,"error",String
+1194,xhr.status,Parametro funcao
+1195,xhr.statusText,Parametro funcao
+1196,s.crossDomain,Parametro funcao
+1197,"text/javascript,String
+1198,application/javascript,Parametro funcao
+1199,"application/ecmascript,String
+1200,"text script":,String
+1201,"GET";,String
+1202,"<script>",String
+1203,"load error",String
+1204,evt,Parametro funcao
+1205,404,Numero
+1206,oldCallbacks,Variavel
+1207,"callback",String
+1208,"_",String
+1209,"json jsonp",String
+1210,originalSettings,Parametro funcao
+1211,overwritten,Parametro funcao
+1212,responseContainer,Parametro funcao
+1213,s.url,Parametro funcao
+1214,"url",String
+1215,"data",String
+1216,"jsonp",String
+1217,s.jsonpCallback,Parametro funcao
+1218,jsonProp,Parametro funcao
+1219,rjsonp,Parametro funcao
+1220,"script json",String
+1221,!responseContainer,Parametro funcao
+1222,"json";,String
+1223,"script";,String
+1224,body,Variavel
+1225,"<form></form><form></form>";,String
+1226,keepScripts,Parametro funcao
+1227,parsed,Parametro funcao
+1228,support.createHTMLDocument,Parametro funcao
+1229,"base",String
+1230,params,Parametro funcao
+1231,off,Parametro funcao
+1232,"POST";,String
+1233,"html",String
+1234,responseText,Parametro funcao
+1235,"<div>",String
+1236,jQuery.timers,Parametro funcao
+1237,curLeft,Parametro funcao
+1238,curCSSTop,Parametro funcao
+1239,curTop,Parametro funcao
+1240,curOffset,Parametro funcao
+1241,curCSSLeft,Parametro funcao
+1242,calculatePosition,Parametro funcao
+1243,"position",String
+1244,"static",String
+1245,"relative";,String
+1246,"top",String
+1247,"left",String
+1248,"fixed",String
+1249,"using",String
+1250,win,Parametro funcao
+1251,!elem.getClientRects().length,Parametro funcao
+1252,offset,Parametro funcao
+1253,offsetParent,Parametro funcao
+1254,"borderTopWidth",String
+1255,"borderLeftWidth",String
+1256,"marginTop",String
+1257,"pageXOffset",String
+1258,"pageYOffset",String
+1259,top,Variavel
+1260,support.pixelPosition,Parametro funcao
+1261,"inner",String
+1262,"": "outer",String
+1263,"outer",String
+1264,defaultExtra,Parametro funcao
+1265,funcName,Parametro funcao
+1266,margin,Parametro funcao
+1267,"client",String
+1268,"scroll",String
+1269,fnOver,Parametro funcao
+1270,fnOut,Parametro funcao
+1271,"blur,String
+1272,"mousedown,String
+1273,"change,String
+1274,hold,Parametro funcao
+1275,"jquery",String
+1276,_jQuery,Variavel

@@ -17,32 +17,81 @@ public class AnalisadorLexico {
         String fileString = readLineByLineJava8( filePath );
         String withoutComments = fileString.replaceAll("(?s:/\\*.*?\\*/)|//.*", "");
         String withoutBreakLines = withoutComments.replaceAll("(?s)\\s|/\\*.*?\\*/|//[^\\r\\n]*", " " );
-        String withoutTabs = withoutBreakLines.trim().replaceAll(" +", " ");
+        String addSpacesComma = withoutBreakLines.replaceAll(",", " ,");
+        String withoutTabs = addSpacesComma.trim().replaceAll(" +", " ");
         
         String[] words = withoutTabs.split(" ");
         String[] alreadyFind = new String[words.length];
-
+        String type = "";
+        
         Integer cont = 0;
         
         try (PrintWriter out = new PrintWriter("src/analisadorlexico/saida.lex.csv")) {
             out.println("Numero Coluna,Token, Tipo");
             
             for(int i = 0; i < words.length; i++) {
+                type = "";
+                Integer anterior = i-1;
                 
                 if(Arrays.asList(alreadyFind).contains(words[i])){
                     continue;
                 }
                 if( Arrays.asList(reserved).contains(words[i]) ){
-                    alreadyFind[cont] = words[i];
-                    out.println(cont+","+words[i]+",Reservada");
-                    cont++;
-                    continue;
+                    type = "Reservada";
+                }
+                else if( words[i].equals("==") || words[i].equals("===") || words[i].equals("!==") || words[i].equals(">=") || words[i].equals("<=") || words[i].equals(">") || words[i].equals("<") || words[i].equals("||") || words[i].equals("&&") ){
+                    type = "Operador";
+                }
+                else if( words[i].equals("null") ){
+                    type = "Literal Nulo";
+                }
+                else if( words[i].equals("true") || words[i].equals("false") ){
+                    type = "Boleano";
+                }
+                else if( isNumeric(words[i]) ){
+                    type = "Numero";
+                }
+                else if( anterior > -1 && (words[anterior].equals("var") || words[anterior].equals("let")) && words[i+1].equals("=") ){
+                    type = "Variavel";
+                }
+                else if( anterior > -1 && words[anterior].equals("const") ){
+                    type = "Constante";
+                }
+                else if( words[i].substring(0,1).equals("\"") ){
+                    type = "String";
+                    Integer stringcont = 1;
+                    while( i+stringcont < words.length && ( Character.toString(words[i+stringcont].charAt(words[i+stringcont].length()-1)).equals("\"") || ( words[i+stringcont].length() > 1 && Character.toString(words[i+stringcont].charAt(words[i+stringcont].length()-2)).equals("\"") ) ) ){
+                        words[i]+= " "+words[i+stringcont];
+                        stringcont++;
+                    }
+                }
+                else if( anterior > -1 && words[anterior].substring(words[anterior].length() - 1).equals("(") && (words[i+1].equals(")") || words[i+1].equals(",")) ){
+                    type = "Parametro funcao";
+                }
+                else if( anterior > -1 && words[anterior].equals(",") && (words[i+1].equals(")") || words[i+1].equals(",")) ){
+                    type = "Parametro funcao";
                 }
                 
+                if( type != "" ){
+                    alreadyFind[cont] = words[i];
+                    out.println(cont+","+words[i].replaceAll(",", " ")+","+type);
+                    cont++;
+                }
             }
         }
     }
     
+    private static boolean isNumeric(String strNum) {
+        if (strNum == null) {
+            return false;
+        }
+        try {
+            double d = Double.parseDouble(strNum);
+        } catch (NumberFormatException nfe) {
+            return false;
+        }
+        return true;
+    }
      
     private static String readLineByLineJava8(String filePath) 
     {
