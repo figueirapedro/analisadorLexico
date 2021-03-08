@@ -1,97 +1,59 @@
 package analisadorlexico;
 
-import java.io.*;
+import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.stream.Stream;
-import java.util.Arrays;
+import java.util.StringTokenizer;
+import java.util.ArrayList;
+import java.util.List;
+import java.io.PrintWriter;
+
 
 
 public class AnalisadorLexico {
 
     public static void main(String[] args) throws IOException {
-        String[] reserved = {"break", "case", "catch", "continue", "debugger", "default", "delete", "do", "else", "finally", "for", "function", "if", "in", "instanceof", "new", "return", "switch", "this", "throw", "try", "typeof", "var", "void", "while", "with", "class", "const", "enum", "export", "extends", "import", "super", "implements", "interface", "let", "package", "private", "protected", "public", "static", "yield"};
-        
-        String filePath = "src/analisadorlexico/jquery-3.6.0.js";
+        String filePath = "jquery-3.6.0.js";
         String fileString = readLineByLineJava8( filePath );
         String withoutComments = fileString.replaceAll("(?s:/\\*.*?\\*/)|//.*", "");
-        String withoutBreakLines = withoutComments.replaceAll("(?s)\\s|/\\*.*?\\*/|//[^\\r\\n]*", " " );
-        String addSpacesComma = withoutBreakLines.replaceAll(",", " ,");
-        String withoutTabs = addSpacesComma.trim().replaceAll(" +", " ");
+        String withoutSpaces = withoutComments.replaceAll("(?s)\\s+|/\\*.*?\\*/|//[^\\r\\n]*", " " );
+        String help = withoutSpaces.replaceAll("(?<=.)(\\,|\\\"|\\(|\\)|\\'|\\;|\\.|\\{|\\}|\\:|\\++|\\-|\\!|\\?|\\[|\\])(|[a-z])", " ");
+        List<customToken> tokenList = new ArrayList<customToken>();
         
-        String[] words = withoutTabs.split(" ");
-        String[] alreadyFind = new String[words.length];
-        String type = "";
+        StringTokenizer st = new StringTokenizer(help);
         
-        Integer cont = 0;
+        customToken token;
         
-        try (PrintWriter out = new PrintWriter("src/analisadorlexico/saida.lex.csv")) {
-            out.println("Numero Coluna,Token, Tipo");
-            
-            for(int i = 0; i < words.length; i++) {
-                type = "";
-                Integer anterior = i-1;
+        int cont = -1;
+        while (st.hasMoreTokens()) {
+            cont++;
+            String x = st.nextToken();
+            token = new customToken();
+            token.id = cont;
+            token.value = x;
+            token.type = validateString(x);
+            tokenList.add(token);
+            System.out.println(token.getId() + ", " + token.getValue() + ", " + token.getType() + "\n");
+        }
+        
+        
+        try (PrintWriter out = new PrintWriter("saida.csv")) {
+            for (int i = 0; i < tokenList.size(); i++) {
+                token = new customToken();
                 
-                if(Arrays.asList(alreadyFind).contains(words[i])){
-                    continue;
-                }
-                if( Arrays.asList(reserved).contains(words[i]) ){
-                    type = "Reservada";
-                }
-                else if( words[i].equals("==") || words[i].equals("===") || words[i].equals("!==") || words[i].equals(">=") || words[i].equals("<=") || words[i].equals(">") || words[i].equals("<") || words[i].equals("||") || words[i].equals("&&") ){
-                    type = "Operador";
-                }
-                else if( words[i].equals("null") ){
-                    type = "Literal Nulo";
-                }
-                else if( words[i].equals("true") || words[i].equals("false") ){
-                    type = "Boleano";
-                }
-                else if( isNumeric(words[i]) ){
-                    type = "Numero";
-                }
-                else if( anterior > -1 && (words[anterior].equals("var") || words[anterior].equals("let")) && words[i+1].equals("=") ){
-                    type = "Variavel";
-                }
-                else if( anterior > -1 && words[anterior].equals("const") ){
-                    type = "Constante";
-                }
-                else if( words[i].substring(0,1).equals("\"") ){
-                    type = "String";
-                    Integer stringcont = 1;
-                    while( i+stringcont < words.length && ( Character.toString(words[i+stringcont].charAt(words[i+stringcont].length()-1)).equals("\"") || ( words[i+stringcont].length() > 1 && Character.toString(words[i+stringcont].charAt(words[i+stringcont].length()-2)).equals("\"") ) ) ){
-                        words[i]+= " "+words[i+stringcont];
-                        stringcont++;
-                    }
-                }
-                else if( anterior > -1 && words[anterior].substring(words[anterior].length() - 1).equals("(") && (words[i+1].equals(")") || words[i+1].equals(",")) ){
-                    type = "Parametro funcao";
-                }
-                else if( anterior > -1 && words[anterior].equals(",") && (words[i+1].equals(")") || words[i+1].equals(",")) ){
-                    type = "Parametro funcao";
-                }
+                token = tokenList.get(i);
                 
-                if( type != "" ){
-                    alreadyFind[cont] = words[i];
-                    out.println(cont+","+words[i].replaceAll(",", " ")+","+type);
-                    cont++;
-                }
+                String linha = token.getId() + ", " + token.getValue() + ", " + token.getType() + "\n";
+                
+                out.println(linha);
             }
         }
+
+        //System.out.println( withoutSpaces );
     }
     
-    private static boolean isNumeric(String strNum) {
-        if (strNum == null) {
-            return false;
-        }
-        try {
-            double d = Double.parseDouble(strNum);
-        } catch (NumberFormatException nfe) {
-            return false;
-        }
-        return true;
-    }
      
     private static String readLineByLineJava8(String filePath) 
     {
@@ -107,6 +69,51 @@ public class AnalisadorLexico {
         }
  
         return contentBuilder.toString();
+    }
+    
+    private static String validateString(String x)
+    {
+        String[] palavrasResevadas = {"window", "document", "use", "strict", "abstract", "arguments","await","boolean","break","byte","case","catch","char","class","const","continue","debugger","default","delete","do", "double","else","enum","eval","export","extends","false","final","finally","float","for","function","goto","if","implements","import","in","instanceof","int","interface","let","long","native","new","null","package","private","protected","public","return","short","static","super","switch","synchronized","this","throw","throws","transient","true","try","typeof","var","void","volatile","while","with","yield"};
+        String[] comparador = {"==", "===", "!==", "!=", ">", "=>", "=<", "<", "!", "&&", "||", "?" };
+        String[] operador = {"+", "-", "++", "*", "/", "="};
+        
+        for(String a : palavrasResevadas){
+            if(a.equals(x))
+                return "palavra-reservada";
+        }
+        
+        for(String a : comparador){
+            if(a.equals(x))
+                return "comparador";
+        }
+        
+        for(String a : operador){
+            if(a.equals(x))
+                return "operador";
+        }
+        
+        if(x.matches("[0-9]\\.[0-9]"))
+            return "float";
+        
+        if(x.matches("[0-9]"))
+            return "inteiro";
+        
+        if(x.matches("(true|false)"))
+            return "boolean";
+        
+        if(x.matches("(?i)string|int|array|date|list|JSON|float|boolean|var|null|undefined|function|bigint|char|symbol|math"))
+            return "tipo-de-dado";
+        
+        if(x.matches(".$"))
+            return "char";
+        
+        if(x.matches("[a-z][a-z]+[A-Z][a-z]+"))
+            return "funcao";
+        
+        if(x.matches("[a-z][A-Z][a-z]+"))
+            return "variavel";
+        
+        return "string";
     }
     
 }
